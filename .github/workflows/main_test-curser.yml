@@ -42,22 +42,22 @@ jobs:
         with:
           name: node-app
       
-      - name: Login to Azure
+      - name: 'Login to Azure'
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_767B13DB8A5A4E50B03BF9F32D74C854 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_632004862E894ECBBDEF0C3AC890DD73 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4D438504ED5540D886A1F8C4047FAC82 }}
-
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'test-curser'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .
 
           
+
 
 
 
