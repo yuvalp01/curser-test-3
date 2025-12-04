@@ -1,0 +1,13 @@
+// Prisma schema for Azure SQL Database connection test
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+// For connection testing, we'll use raw SQL queries
+// The accounts table structure doesn't need to be defined for a simple connection test
+
